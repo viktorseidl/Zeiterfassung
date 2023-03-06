@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.MainPage" BackgroundColor="#94a3b8" Title="Zeiterfassungs-System">
+
+    <ScrollView>
+        <StackLayout Margin="0,0,0,30">
+        <Frame BackgroundColor="#cbd5e1">
+        <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" Margin="10" HeightRequest="50"></Image>
+        </Frame>
+        <Label Text="Mitarbeiter-Login" TextColor="#0f172a" FontSize="Title" Padding="30,10,25,10"/>
+        <Grid Margin="0,10,0,0" RowSpacing="10" Padding="10,25,10,20" BackgroundColor="#cbd5e1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.idicon.png}" HorizontalOptions="End"></Image>
+            <Frame Grid.Row="0" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#e2e8f0"  BorderColor="#e5e5e5" CornerRadius="10">
+                <Entry IsPassword="True" x:Name="PPin" Margin="10,0,10,0" MaxLength="10" Placeholder="PIN-ID" PlaceholderColor="#64748b">
+
+                </Entry>
+            </Frame>
+            <Image Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.pwdicon.png}" HorizontalOptions="End"></Image>
+            <Frame Grid.Row="1" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#e2e8f0"  BorderColor="#e5e5e5" CornerRadius="10">
+                <Entry IsPassword="True" x:Name="PPass" Margin="10,0,10,0" MaxLength="10" Placeholder="Passwort" PlaceholderColor="#64748b">
+
+                </Entry>
+            </Frame>
+            <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Zugangs-Daten vergessen?" FontAttributes="Bold" Padding="50,0,0,0" FontSize="Micro"/>
+                <Button Grid.Row="3" Grid.ColumnSpan="2" Clicked="BtnForgotData" Text="Zugangs-Daten anfordern" TextColor="#f8fafc" CornerRadius="8" FontAttributes="Bold" FontSize="Micro" BackgroundColor="#334155" Margin="50,0,50,0" Padding="5,2,5,2" />
+        </Grid>
+        <Button Clicked="BtnLoginZFA" Text="Anmelden" ContentLayout="Top,10" Image="{local:ImageResource ZFAAPP.Images.logicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,20,20,0" CornerRadius="8" Padding="10,10,10,10"></Button>
+        <Button Clicked="BtnQrScanner" Text="QR-Scannen" ContentLayout="Top,10" Image="{local:ImageResource ZFAAPP.Images.scanlogicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,8,20,50" CornerRadius="8" Padding="10,10,10,10"></Button>
+        
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

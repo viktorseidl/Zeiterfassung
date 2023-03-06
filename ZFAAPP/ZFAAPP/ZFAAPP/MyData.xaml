@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.MyData" BackgroundColor="#94a3b8" NavigationPage.HasBackButton="False" Title="Meine Daten">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="12" ColumnDefinitions="{OnIdiom Phone='Auto,*,Auto', Default='.05*,.9*,.05*'}">
+                    <StackLayout Grid.Column="1">
+
+                        <Frame BackgroundColor="#cbd5e1">
+                            <StackLayout>
+                                <Grid ColumnDefinitions="*,60" RowDefinitions="40,30,25,30,25,30,25,43,20,46,10,46" RowSpacing="0">
+                                    <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource ZFAAPP.Images.usericon.png}" HeightRequest="20" />
+                                    <Label Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Mitarbeiter-ID" />
+                                    <Label Grid.Row="3" x:Name="M_ID" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" Margin="18,0,0,0"  Text="" />
+                                    <Label Grid.Row="4" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Vorname" />
+                                    <Label Grid.Row="5" x:Name="Vorname" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" Margin="18,0,0,0"  Text="" />
+                                    <Label Grid.Row="6" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Nachname" />
+                                    <Frame Grid.Row="7"  Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <Entry x:Name="Nachname" FontSize="Small" Margin="10,0,10,0" MaxLength="50" Text="" ></Entry>
+                                    </Frame>
+                                    <Button Grid.Row="9" Clicked="BtnSaveMyData" Grid.ColumnSpan="2" Text="Speichern" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" Margin="0,0,0,0" />
+                                    <Button Grid.Row="11" Grid.ColumnSpan="2" Clicked="BtnBack" Text="Zurück" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" ></Button>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>                        
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Margin="0,30">
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Powered by" />
+                    <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" HeightRequest="20" />
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Version 1.0" Margin="0,0,0,30" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

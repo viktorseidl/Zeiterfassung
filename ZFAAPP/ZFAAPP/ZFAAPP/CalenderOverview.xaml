@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.CalenderOverview" BackgroundColor="#94a3b8" NavigationPage.HasBackButton="False" Title="Kalender">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="12" ColumnDefinitions="{OnIdiom Phone='Auto,*,Auto', Default='.05*,.9*,.05*'}">
+                    <StackLayout Grid.Column="1">
+
+                        <Frame BackgroundColor="#cbd5e1">
+                            <StackLayout>
+                                <Grid ColumnDefinitions="*,60" RowDefinitions="45,30,80,10,70,180,20,46,*" RowSpacing="0">
+                                    <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource ZFAAPP.Images.calendaricon.png}" HeightRequest="20" />
+                                    <Grid Grid.Row="2" Grid.ColumnSpan="2" ColumnDefinitions="*" ColumnSpacing="2" HorizontalOptions="FillAndExpand" RowDefinitions="40,*" RowSpacing="2">
+                                        <Button Clicked="Jan" Text="Jan" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b"></Button>
+                                        <Button Clicked="Feb" Text="Feb" Grid.Column="1" Grid.Row="0"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro"  TextColor="#cbd5e1" BackgroundColor="#1e293b"></Button>
+                                        <Button Clicked="Mar" Text="Mar" Grid.Column="2" Grid.Row="0"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                        <Button Clicked="Apr" Text="Apr" Grid.Column="3" Grid.Row="0"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                        <Button Clicked="May" Text="May" Grid.Column="4" Grid.Row="0"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                        <Button Clicked="Jun" Text="Jun" Grid.Column="5" Grid.Row="0"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                        <Button Clicked="Jul" Text="Jul" Grid.Column="0" Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1"  BackgroundColor="#1e293b"></Button>
+                                        <Button Clicked="Aug" Text="Aug" Grid.Column="1" Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b"></Button>
+                                        <Button Clicked="Sep" Text="Sep" Grid.Column="2" Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro"  TextColor="#cbd5e1" BackgroundColor="#1e293b"></Button>
+                                        <Button Clicked="Okt" Text="Okt" Grid.Column="3" Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                        <Button Clicked="Nov" Text="Nov" Grid.Column="4" Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                        <Button Clicked="Dez" Text="Dez" Grid.Column="5" Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" Padding="0" FontSize="Micro" TextColor="#cbd5e1" BackgroundColor="#1e293b" ></Button>
+                                    </Grid>
+                                        <Label Grid.Row="4" Grid.ColumnSpan="2" x:Name="Monatsname" HorizontalOptions="FillAndExpand" FontSize="Small" Text="Monat Oktober"></Label>
+                                    
+                                    <StackLayout Grid.Row="5" Grid.ColumnSpan="2" Spacing="0" HorizontalOptions="FillAndExpand" Padding="4" BackgroundColor="#1e293b">
+                                        <RefreshView x:Name="Refsh" IsRefreshing="False" HorizontalOptions="FillAndExpand">
+                                            <Grid x:Name="kalenderView"  ColumnDefinitions="*" ColumnSpacing="0" HorizontalOptions="FillAndExpand" RowDefinitions="25,*" RowSpacing="0">
+                                            <Label Text="Mo" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="Black" BackgroundColor="#cbd5e1"/>
+                                            <Label Text="Di" Grid.Column="1" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="Black" BackgroundColor="#cbd5e1"/>
+                                            <Label Text="Mi" Grid.Column="2" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="Black" BackgroundColor="#cbd5e1" />
+                                            <Label Text="Do" Grid.Column="3" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="Black" BackgroundColor="#cbd5e1" />
+                                            <Label Text="Fr" Grid.Column="4" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="Black" BackgroundColor="#cbd5e1" />
+                                            <Label Text="Sa" Grid.Column="5" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="Black" BackgroundColor="#cbd5e1" />
+                                            <Label Text="So" Grid.Column="6" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="Black"  BackgroundColor="#cbd5e1"/>
+                                                <Label x:Name="T1" Text="1" Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T2" Text="2" Grid.Column="1" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T3" Text="3" Grid.Column="2" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T4" Text="4" Grid.Column="3" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T5" Text="5" Grid.Column="4" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T6" Text="6" Grid.Column="5" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T7" Text="7" Grid.Column="6" Grid.Row="1" VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc"/>
+                                                <Label x:Name="T8" Text="8" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T9" Text="9" Grid.Column="1" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T10" Text="10" Grid.Column="2" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T11" Text="11" Grid.Column="3" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T12" Text="12" Grid.Column="4" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T13" Text="13" Grid.Column="5" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro"  TextColor="#f8fafc"/>
+                                                <Label x:Name="T14" Text="14" Grid.Column="6" Grid.Row="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T15" Text="15" Grid.Column="0" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T16" Text="16" Grid.Column="1" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T17" Text="17" Grid.Column="2" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T18" Text="18" Grid.Column="3" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T19" Text="19" Grid.Column="4" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T20" Text="20" Grid.Column="5" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T21" Text="21" Grid.Column="6" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T22" Text="22" Grid.Column="0" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T23" Text="23" Grid.Column="1" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T24" Text="24" Grid.Column="2" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T25" Text="25" Grid.Column="3" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T26" Text="26" Grid.Column="4" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T27" Text="27" Grid.Column="5" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T28" Text="28" Grid.Column="6" Grid.Row="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T29" Text="29" Grid.Column="0" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T30" Text="30" Grid.Column="1" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T31" Text="31" Grid.Column="2" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T32" Text="1" Grid.Column="3" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T33" Text="2" Grid.Column="4" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T34" Text="3" Grid.Column="5" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T35" Text="4" Grid.Column="6" Grid.Row="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T36" Text="5" Grid.Column="0" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T37" Text="6" Grid.Column="1" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T38" Text="7" Grid.Column="2" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T39" Text="8" Grid.Column="3" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T40" Text="9" Grid.Column="4" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T41" Text="10" Grid.Column="5" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                                <Label x:Name="T42" Text="11" Grid.Column="6" Grid.Row="6" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="#f8fafc" />
+                                            </Grid>
+                                        </RefreshView>
+                                    </StackLayout>
+                                        
+                                    <Button Grid.Row="7" Grid.ColumnSpan="2"  Clicked="BtnBack"  Text="Zurück" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" ></Button>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid> 
+
+                <StackLayout Margin="0,30">
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Powered by" />
+                    <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" HeightRequest="20" />
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Version 1.0" Margin="0,0,0,30" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

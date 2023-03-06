@@ -1,0 +1,163 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ForgottenLog.xaml.cs" />
+    <Compile Remove="HoursSurplus.xaml.cs" />
+    <Compile Remove="Models\SessionTokenUpdater.cs" />
+    <Compile Remove="MyNotifications.xaml.cs" />
+    <Compile Remove="NotifyIllness.xaml.cs" />
+    <Compile Remove="Page1.xaml.cs" />
+    <Compile Remove="TodosPage.xaml.cs" />
+    <Compile Remove="View1.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ForgottenLog.xaml" />
+    <EmbeddedResource Remove="HoursSurplus.xaml" />
+    <EmbeddedResource Remove="MyNotifications.xaml" />
+    <EmbeddedResource Remove="NotifyIllness.xaml" />
+    <EmbeddedResource Remove="Page1.xaml" />
+    <EmbeddedResource Remove="TodosPage.xaml" />
+    <EmbeddedResource Remove="View1.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\backicon.png" />
+    <None Remove="Images\calendaricon.png" />
+    <None Remove="Images\changeicon.png" />
+    <None Remove="Images\comesicon.png" />
+    <None Remove="Images\dayviewicon.png" />
+    <None Remove="Images\dslogo.png" />
+    <None Remove="Images\holidayicon.png" />
+    <None Remove="Images\homeicon.png" />
+    <None Remove="Images\icon.png" />
+    <None Remove="Images\idicon.png" />
+    <None Remove="Images\illnessicon.png" />
+    <None Remove="Images\infoicon.png" />
+    <None Remove="Images\logicon.png" />
+    <None Remove="Images\loginicon.png" />
+    <None Remove="Images\logouticon.png" />
+    <None Remove="Images\mailicon.png" />
+    <None Remove="Images\monthviewicon.png" />
+    <None Remove="Images\noticeicon.png" />
+    <None Remove="Images\phoneicon.png" />
+    <None Remove="Images\pwdicon.png" />
+    <None Remove="Images\qrcodeicon.png" />
+    <None Remove="Images\scanlogicon.png" />
+    <None Remove="Images\screenshoticon.png" />
+    <None Remove="Images\searchicon.png" />
+    <None Remove="Images\secureicon.png" />
+    <None Remove="Images\settingsicon.png" />
+    <None Remove="Images\supporticon.png" />
+    <None Remove="Images\supportsicon.png" />
+    <None Remove="Images\timericon.png" />
+    <None Remove="Images\todoicon.png" />
+    <None Remove="Images\usericon.png" />
+    <None Remove="Images\usersicon.png" />
+    <None Remove="Images\weekviewicon.png" />
+    <None Remove="Images\yearviewicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\backicon.png" />
+    <EmbeddedResource Include="Images\calendaricon.png" />
+    <EmbeddedResource Include="Images\changeicon.png" />
+    <EmbeddedResource Include="Images\comesicon.png" />
+    <EmbeddedResource Include="Images\dayviewicon.png" />
+    <EmbeddedResource Include="Images\dslogo.png" />
+    <EmbeddedResource Include="Images\holidayicon.png" />
+    <EmbeddedResource Include="Images\homeicon.png" />
+    <EmbeddedResource Include="Images\icon.png" />
+    <EmbeddedResource Include="Images\idicon.png" />
+    <EmbeddedResource Include="Images\illnessicon.png" />
+    <EmbeddedResource Include="Images\infoicon.png" />
+    <EmbeddedResource Include="Images\logicon.png" />
+    <EmbeddedResource Include="Images\loginicon.png" />
+    <EmbeddedResource Include="Images\logouticon.png" />
+    <EmbeddedResource Include="Images\mailicon.png" />
+    <EmbeddedResource Include="Images\monthviewicon.png" />
+    <EmbeddedResource Include="Images\noticeicon.png" />
+    <EmbeddedResource Include="Images\phoneicon.png" />
+    <EmbeddedResource Include="Images\pwdicon.png" />
+    <EmbeddedResource Include="Images\qrcodeicon.png" />
+    <EmbeddedResource Include="Images\scanlogicon.png" />
+    <EmbeddedResource Include="Images\screenshoticon.png" />
+    <EmbeddedResource Include="Images\searchicon.png" />
+    <EmbeddedResource Include="Images\secureicon.png" />
+    <EmbeddedResource Include="Images\settingsicon.png" />
+    <EmbeddedResource Include="Images\supporticon.png" />
+    <EmbeddedResource Include="Images\supportsicon.png" />
+    <EmbeddedResource Include="Images\timericon.png" />
+    <EmbeddedResource Include="Images\todoicon.png" />
+    <EmbeddedResource Include="Images\usericon.png" />
+    <EmbeddedResource Include="Images\usersicon.png" />
+    <EmbeddedResource Include="Images\weekviewicon.png" />
+    <EmbeddedResource Include="Images\yearviewicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="CalenderOverview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ForgotEmail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ForgotLog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ForgotTel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HolidayRequest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Home.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MyData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MySafety.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MySupport.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PassChange.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="QRScanner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ShowMyQRCode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UserMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.ForgotEmail" BackgroundColor="#94a3b8">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,0,0,30">
+            <Frame BackgroundColor="#cbd5e1">
+                <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" Margin="10" HeightRequest="50"></Image>
+            </Frame>
+            <Label Text="Zugangs-Daten per E-mail anfordern" TextColor="#0f172a" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
+            <Grid Margin="0,10,0,0" RowSpacing="5" Padding="10,25,10,20" BackgroundColor="#cbd5e1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.mailicon.png}" HorizontalOptions="End"></Image>
+                <Frame Grid.Row="0" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#e2e8f0"  BorderColor="#e5e5e5" CornerRadius="10">
+                    <Entry IsPassword="True" Margin="10,0,10,0" MaxLength="10" Placeholder="E-mail Adresse" PlaceholderColor="#64748b">
+
+                    </Entry>
+                </Frame>
+            </Grid>
+            <Button Text="Zugangs-Daten anfordern" ContentLayout="Top,30" Image="{local:ImageResource ZFAAPP.Images.mailicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,20,20,0" CornerRadius="8" Padding="10,20,10,20"></Button>
+            <Button Clicked="btnBackHome" Text="Home" ContentLayout="Top,30" Image="{local:ImageResource ZFAAPP.Images.homeicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,10,20,40" CornerRadius="8" Padding="10,20,10,20"></Button>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

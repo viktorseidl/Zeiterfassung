@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP" xmlns:x1="http://xamarin.com/schemas/2014/forms"
+             x:Class="ZFAAPP.MySupport" BackgroundColor="#94a3b8" NavigationPage.HasBackButton="False" Title="Support">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="12" ColumnDefinitions="{OnIdiom Phone='Auto,*,Auto', Default='.05*,.9*,.05*'}">
+                    <StackLayout Grid.Column="1">
+
+                        <Frame BackgroundColor="#cbd5e1">
+                            <StackLayout>
+                                <Grid ColumnDefinitions="*,60" RowDefinitions="40,30,35,30,20,30,35,40,30,42,10,42,10,150,78,50,*" RowSpacing="0">
+                                    <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource ZFAAPP.Images.supporticon.png}" HeightRequest="20" />
+                                    <Label Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold" Margin="0,0,0,5"  Text="Support-Hotline" />
+                                    <Label Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" FontSize="Micro" Text="Sie können unseren Support unter folgender Hotline erreichen:" />
+                                    <Label Grid.Row="4" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold" Margin="0,0,0,5"  Text="999-9999-9999" />
+                                    <Label Grid.Row="6" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold" Margin="0,0,0,5"  Text="Support-Ticket" />
+                                    <Label Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" FontSize="Micro" Text="Sollten Sie ein Problem mit der App oder mit Ihrer Zeiterfassung haben, dann können Sie hier ein Support-Ticket beantragen. Sie erhalten dann eine Antwort auf Ihrer hinterlegten E-mail"  />
+                                    <Label Grid.Row="8" Grid.ColumnSpan="2" x:Name="DefSupportTicket" HorizontalOptions="FillAndExpand" FontSize="Micro" FontAttributes="Bold" Text=""  />
+                                    <Frame Grid.Row="9"  Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <Picker x:Name="SupportReason" SelectedIndexChanged="SaveInVar" BackgroundColor="Transparent" Title="Grund auswählen" Margin="6,0,0,0" FontSize="Small">
+                                            <Picker.Items >
+                                                <x:String>Problembehandlung</x:String>
+                                                <x:String>Zeiterfassung</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Frame>
+                                    <Frame Grid.Row="11"  Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <Entry IsPassword="False" x:Name="MMail" Margin="10,0,10,0" MaxLength="250" Placeholder="E-mail Adresse" FontSize="Small" >
+
+                                        </Entry>
+                                    </Frame>
+                                    <Frame Grid.Row="13"  Grid.Column="0" Padding="4" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <Editor x:Name="SupportDescription"  FontSize="Small" Placeholder="Bitte beschreiben Sie das Problem, damit wir Ihnen entsprechend helfen können.">
+                                            <Editor.BackgroundColor>
+                                                <OnPlatform x:TypeArguments="x1:Color"
+                                                iOS="#a4eaff"
+                                                Android="#f8fafc"
+                                                WinPhone="#f8fafc" />
+                                            </Editor.BackgroundColor>
+                                        </Editor>
+                                    </Frame>
+                                    <Button Grid.Row="14" Clicked="BtnSendSupport" Grid.ColumnSpan="2" Text="Absenden" Padding="0,5" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" Margin="0,20,0,8" ></Button>
+                                    <Button Grid.Row="15" Grid.ColumnSpan="2" Clicked="BtnBack" Text="Zurück" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" ></Button>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Margin="0,30">
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Powered by" />
+                    <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" HeightRequest="20" />
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Version 1.0" Margin="0,0,0,30" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

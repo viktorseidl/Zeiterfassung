@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.HolidayRequest" BackgroundColor="#94a3b8" NavigationPage.HasBackButton="False" Title="Urlaub beantragen">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="12" ColumnDefinitions="{OnIdiom Phone='Auto,*,Auto', Default='.05*,.9*,.05*'}">
+                    <StackLayout Grid.Column="1">
+
+                        <Frame BackgroundColor="#cbd5e1">
+                            <StackLayout>
+                                <Grid ColumnDefinitions="*,60" RowDefinitions="40,30,25,46,12,25,46,12,25,46,12,25,46,12,25,150,25,46,20,46" RowSpacing="0">
+                                    <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource ZFAAPP.Images.holidayicon.png}" HeightRequest="20" />
+                                    <Label Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Von Datum" />
+                                    <Frame Grid.Row="3" x:Name="VonDate" Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <DatePicker  MinimumDate="01/01/2022" MaximumDate="12/31/2024" Format="dd/MM/yyyy" Margin="8,0,0,0" FontSize="Small" BackgroundColor="Transparent" DateSelected="OnDateSelectedfrom" />
+                                    </Frame>                                    
+                                    <Label Grid.Row="5" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Bis Datum" />                                    
+                                    <Frame Grid.Row="6"  Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <DatePicker  MinimumDate="01/01/2022" MaximumDate="12/31/2024" Format="dd/MM/yyyy"  Margin="8,0,0,0" FontSize="Small" BackgroundColor="Transparent" DateSelected="OnDateSelectedto" />
+                                    </Frame>
+                                    <Label Grid.Row="8" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Anzahl der Urlaubstage" />
+                                    <Frame Grid.Row="9"  Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc" BorderColor="#f8fafc" CornerRadius="10">
+                                        <Entry x:Name="UTage" FontSize="Small" Margin="10,0,10,0" MaxLength="50" Text="" BackgroundColor="Transparent" Placeholder="Anazahl der Tage" ></Entry>
+                                    </Frame>
+                                    <Label Grid.Row="11" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Typ" />
+                                    <Frame Grid.Row="12"  Grid.Column="0"  Padding="0" Margin="15,0,0,6" BackgroundColor="#f8fafc" BorderColor="#f8fafc" CornerRadius="10">
+                                        <Picker BackgroundColor="Transparent" Title="Typ auswählen" SelectedIndexChanged="SelectionType" Margin="6,0,0,0" FontSize="Small">
+                                            <Picker.Items>
+                                                <x:String>Urlaubs-Konto</x:String>
+                                                <x:String>Zeit-Konto</x:String>
+                                                <x:String>Sonderurlaub</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Frame>
+                                    <Label Grid.Row="14" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Bemerkung" />
+                                    <Frame Grid.Row="15"  Grid.Column="0" Padding="4" Margin="15,0,0,6" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                                        <Editor x:Name="Description"  FontSize="Small" Placeholder="Bemerkung.">
+                                            <Editor.BackgroundColor>
+                                                <OnPlatform x:TypeArguments="Color"
+                                                iOS="#a4eaff"
+                                                Android="#f8fafc"
+                                                WinPhone="#f8fafc" />
+                                            </Editor.BackgroundColor>
+                                        </Editor>
+                                    </Frame>
+                                    <Button Grid.Row="17"  Grid.ColumnSpan="2" Clicked="Beantragen" Text="BEANTRAGEN" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" Margin="0,0,0,0" />
+                                    <Button Grid.Row="19" Grid.ColumnSpan="2" Clicked="BtnBack"  Text="Zurück" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" ></Button>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Margin="0,30">
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Powered by" />
+                    <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" HeightRequest="20" />
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Version 1.0" Margin="0,0,0,30" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

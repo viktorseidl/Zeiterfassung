@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.PassChange" BackgroundColor="#94a3b8" NavigationPage.HasBackButton="False" Title="Passwort ändern">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,0,0,30">
+                <StackLayout BackgroundColor="#cbd5e1" Padding="0,10,0,20" Margin="0,0">
+                <Label Text="Passwort Anforderungen:" TextColor="#0f172a" FontSize="Small" FontAttributes="Bold" Padding="30,10,0,00"/>
+                <Label Text="- Mindestens 8 Stellen lang" TextColor="#0f172a" FontSize="Small" Padding="40,00,40,0"/>
+                <Label Text="- Das Passwort muss min 2 Sonderzeichen enthalten" TextColor="#0f172a" FontSize="Small" Padding="40,00,40,0"/>
+                <Label Text="- Das Passwort muss min 1 Zahl enthalten" TextColor="#0f172a" FontSize="Small" Padding="40,00,40,0"/>
+                <Label Text="- Erlaubt sind Groß- und Kleinbuchstaben" TextColor="#0f172a" FontSize="Small" Padding="40,00,40,0"/>
+                <Label Text="Bevor Sie Ihr neues Passwort nutzen können, müssen Sie dies über den Aktivierungs-Link in der E-mail bestätigen. Sie werden automatisch abgemeldet." TextColor="#0f172a" FontSize="Small" Padding="40,00,40,0"/>
+                
+                <Grid Margin="0,10,0,0" RowSpacing="10" Padding="10,25,10,20">
+                    <Grid.RowDefinitions>
+                        
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Grid.Row="0" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.pwdicon.png}" HorizontalOptions="End"></Image>
+                        <Frame Grid.Row="0" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                        <Entry IsPassword="True" x:Name="OldPass" Margin="10,0,10,0" MaxLength="12" Placeholder="Altes Passwort" PlaceholderColor="#64748b">
+
+                        </Entry>
+                    </Frame>
+                    <Image Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.pwdicon.png}" HorizontalOptions="End"></Image>
+                        <Frame Grid.Row="1" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                        <Entry IsPassword="True" x:Name="Newpass"  Margin="10,0,10,0" MaxLength="12" Placeholder="Neues Passwort" PlaceholderColor="#64748b">
+
+                        </Entry>
+                    </Frame>
+                    <Image Grid.Row="2" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.pwdicon.png}" HorizontalOptions="End"></Image>
+                        <Frame Grid.Row="2" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                        <Entry IsPassword="True" x:Name="NewpassAgain" Margin="10,0,10,0" MaxLength="12" Placeholder="Wiederhole neues Passwort" PlaceholderColor="#64748b">
+
+                        </Entry>
+                    </Frame>
+                        <Image Grid.Row="3" Grid.Column="0" Margin="0,0,5,0" WidthRequest="20" Source="{local:ImageResource ZFAAPP.Images.mailicon.png}" HorizontalOptions="End"></Image>
+                        <Frame Grid.Row="3" Grid.Column="1"  Padding="0" Margin="5,0,20,0" BackgroundColor="#f8fafc"  BorderColor="#f8fafc" CornerRadius="10">
+                            <Entry IsPassword="False" x:Name="Mail" Margin="10,0,10,0" MaxLength="250" Placeholder="Mail Adresse" PlaceholderColor="#64748b">
+
+                            </Entry>
+                        </Frame>
+
+                    </Grid>
+                </StackLayout>
+                <Button Grid.Row="9" Grid.ColumnSpan="2" Clicked="btnChangePass" Text="Passwort ändern" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.pwdicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" Margin="10,0,10,0" BackgroundColor="#f8fafc" ></Button>
+                <Button Grid.Row="9" Grid.ColumnSpan="2" Clicked="btnBackHome" Text="Zurück" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" Margin="10,0,10,0" BackgroundColor="#f8fafc" ></Button>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

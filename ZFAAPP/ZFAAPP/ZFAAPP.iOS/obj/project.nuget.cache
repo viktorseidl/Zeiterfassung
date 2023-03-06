@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "IRd/djWQ8aVXHplA6xxhcUHGhVAG35ZR4v/X1teHMObJr9AOja5qzkz34Fr7yD9k/oezQ8QTaUf7Czm7mDJyiw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Trainee2\\OneDrive - DATA Schafhausen GmbH\\Dokumente\\BZFA\\zfpaold\\ZFAAPP\\ZFAAPP\\ZFAAPP.iOS\\ZFAAPP.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Trainee2\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Trainee2\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Trainee2\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Trainee2\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\Trainee2\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
+    "C:\\Users\\Trainee2\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.ForgotLog"  BackgroundColor="#94a3b8">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,0,0,30">
+            <Frame BackgroundColor="#cbd5e1">
+                <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" Margin="10" HeightRequest="50"></Image>
+            </Frame>
+                <Label Text="Zugangs-Daten anfordern" TextColor="#0f172a" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
+                <Label Text="Wählen Sie Ihre Verifizierungs-Methode aus:" TextColor="#0f172a" FontSize="Medium" Padding="30,10,30,10"/>
+            <Button Clicked="btnForgotDMail" Text="Email" ContentLayout="Top,30" Image="{local:ImageResource ZFAAPP.Images.mailicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,10,20,0" CornerRadius="8" Padding="10,20,10,20"></Button>
+            <Button Clicked="btnForgotDTel" Text="Smartphone" ContentLayout="Top,30" Image="{local:ImageResource ZFAAPP.Images.phoneicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,0,20,0" CornerRadius="8" Padding="10,20,10,20"></Button>
+            <Button Clicked="btnBackHome" Text="Zurück" ContentLayout="Top,30" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" FontAttributes="Bold" Background="#f8fafc" TextColor="#0f172a" Margin="20,0,20,40" CornerRadius="8" Padding="10,20,10,20"></Button>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

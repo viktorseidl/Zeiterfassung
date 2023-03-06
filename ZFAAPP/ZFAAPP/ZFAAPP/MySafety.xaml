@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.MySafety" BackgroundColor="#94a3b8" NavigationPage.HasBackButton="False" Title="Sicherheit">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="12" ColumnDefinitions="{OnIdiom Phone='Auto,*,Auto', Default='.05*,.9*,.05*'}">
+                    <StackLayout Grid.Column="1">
+
+                        <Frame BackgroundColor="#cbd5e1">
+                            <StackLayout>
+                                <Grid ColumnDefinitions="*,60" RowDefinitions="40,30,30,38,40,0,25,30,38,40,*" RowSpacing="0">
+                                    <Image Grid.Row="0" Grid.Column="1" Source="{local:ImageResource ZFAAPP.Images.secureicon.png}" HeightRequest="20" />
+                                    <Label Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold" Margin="0,0,0,5"  Text="QR-Code Zugang generieren" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="GetQRCode" NumberOfTapsRequired="1" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" FontSize="Micro" Text="Sie können sich einen Anmelde-Schlüssel als QR-Code generieren lassen, der Sie mittels Scan im System anmeldet." />
+                                    <Button Grid.Row="4" Clicked="BtnGenerateQR" Grid.ColumnSpan="2" Text="QR-Code generieren" HorizontalOptions="Start" BackgroundColor="#f8fafc" />
+                                    <Label Grid.Row="7" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="Small" FontAttributes="Bold"  Text="Passwort ändern" />
+                                    <Label Grid.Row="8" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" FontSize="Micro" Text="Hier haben Sie die Möglichkeit Ihr Erst-Anmelde Passwort abzuändern gegen ein privates Passwort." />
+                                    <Button Grid.Row="9" Clicked="ChangeMyPass" Grid.ColumnSpan="2" Text="Passwort ändern" HorizontalOptions="Start" BackgroundColor="#f8fafc" />
+                                    <Button Grid.Row="11" Grid.ColumnSpan="2" Clicked="BtnBack" Text="Zurück" ContentLayout="Top,0" Image="{local:ImageResource ZFAAPP.Images.backicon.png}" Padding="0,5" HorizontalOptions="FillAndExpand" BackgroundColor="#f8fafc" ></Button>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Margin="0,30">
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Powered by" />
+                    <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" HeightRequest="20" />
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Version 1.0" Margin="0,0,0,30" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

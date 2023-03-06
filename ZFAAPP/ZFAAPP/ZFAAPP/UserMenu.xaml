@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZFAAPP"
+             x:Class="ZFAAPP.UserMenu" NavigationPage.HasBackButton="False" BackgroundColor="#94a3b8" Title="Mitarbeiter-Einstellungen">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="12" ColumnDefinitions="{OnIdiom Phone='Auto,*,Auto', Default='.05*,.9*,.05*'} ">
+                    <StackLayout Grid.Column="1">
+
+                    <Frame Style="{DynamicResource BCard}" BackgroundColor="#cbd5e1">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MyDataSettings" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="500,60" HorizontalOptions="FillAndExpand">
+                                    <Label Grid.Column="0" Style="{DynamicResource BLabelMedium}" HorizontalOptions="FillAndExpand"  Text="MEINE DATEN" FontAttributes="Bold" />
+                                    <Image Source="{local:ImageResource ZFAAPP.Images.usericon.png}" HeightRequest="20" />
+                                </Grid>
+                            </StackLayout>
+                    </Frame>
+                    
+                    <Frame Style="{DynamicResource BCard}" BackgroundColor="#cbd5e1">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SecuritySettings" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="500,60" HorizontalOptions="FillAndExpand">
+                                <Label Grid.Column="0" Style="{DynamicResource BLabelMedium}" HorizontalOptions="FillAndExpand"  Text="SICHERHEIT" FontAttributes="Bold" />
+                                <Image Source="{local:ImageResource ZFAAPP.Images.secureicon.png}" HeightRequest="20" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <Frame IsVisible="False" Style="{DynamicResource BCard}" BackgroundColor="#cbd5e1">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ApplicationSettings" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="500,60" HorizontalOptions="FillAndExpand">
+                                <Label Grid.Column="0" Style="{DynamicResource BLabelMedium}" HorizontalOptions="FillAndExpand"  Text="EINSTELLUNGEN" FontAttributes="Bold" />
+                                <Image Source="{local:ImageResource ZFAAPP.Images.settingsicon.png}" HeightRequest="20" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                        <Frame Style="{DynamicResource BCard}" BackgroundColor="#cbd5e1">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SupportSettings" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="500,60" HorizontalOptions="FillAndExpand">
+                                    <Label Grid.Column="0" Style="{DynamicResource BLabelMedium}" HorizontalOptions="FillAndExpand"  Text="SUPPORT" FontAttributes="Bold" />
+                                    <Image Source="{local:ImageResource ZFAAPP.Images.supportsicon.png}" HeightRequest="20" />
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Style="{DynamicResource BCard}" BackgroundColor="#cbd5e1">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BackHomeScreen" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Grid ColumnDefinitions="500,60" HorizontalOptions="FillAndExpand">
+                                    <Label Grid.Column="0" Style="{DynamicResource BLabelMedium}" HorizontalOptions="FillAndExpand"  Text="HOME" FontAttributes="Bold" />
+                                    <Image Source="{local:ImageResource ZFAAPP.Images.homeicon.png}" HeightRequest="20" />
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Margin="0,150">
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Powered by" />
+                    <Image Source="{local:ImageResource ZFAAPP.Images.dslogo.png}" HeightRequest="20" />
+                    <Label FontSize="Micro" HorizontalOptions="Center"   Text="Version 1.0" Margin="0,0,0,30" />
+                </StackLayout>
+            </StackLayout>
+            </ScrollView>
+     </ContentPage.Content>
+</ContentPage>
